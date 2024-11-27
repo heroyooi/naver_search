@@ -1,9 +1,10 @@
 const express = require('express');
-const https = require('https');
-const fs = require('fs');
 const axios = require('axios');
-
 const app = express();
+
+// 네이버 API 키 환경 변수로 설정
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 // CORS 허용
 app.use((req, res, next) => {
@@ -31,8 +32,5 @@ app.get('/search', async (req, res) => {
     }
 });
 
-// 포트 설정 (Vercel은 자동으로 포트를 설정)
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+// 서버리스 함수로 응답 반환
+module.exports = app;
