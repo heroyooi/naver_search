@@ -8,8 +8,19 @@
     ],
     "routes": [
       {
-        "src": "/api/search",
-        "dest": "/api/search.js"
+        "src": "/api/(.*)",
+        "dest": "/api/$1"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://vercel.live; connect-src 'self' https://vercel.live; img-src 'self' https://vercel.live; style-src 'self' 'unsafe-inline'; object-src 'none';"
+          }
+        ]
       }
     ]
   }
