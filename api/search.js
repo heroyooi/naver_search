@@ -3,6 +3,8 @@ const axios = require('axios');
 const helmet = require('helmet');
 const app = express();
 
+require('dotenv').config();
+
 // helmet을 사용하여 CSP 설정
 app.use(helmet());
 
