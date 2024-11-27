@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node api/search.js",
-    "dev": "vercel dev"
+    "start": "nodemon app.js"
   },
   "author": "heroyooi",
   "license": "MIT",
